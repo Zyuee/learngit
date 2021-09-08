@@ -1,0 +1,31 @@
+.table-page {
+  margin: 10px;
+  overflow: hidden;
+  position: absolute;
+  right:10px;
+  bottom:10px;
+}
+
+.data-table-panel {
+  padding: 10px;
+}
+
+.data-toolbar {
+  margin-left: -10px;
+  text-align: left !important;
+}
+
+.data-table {
+  margin-top: 2.1rem;
+
+}
+
+.table-col {
+  .ivu-table-cell {
+    padding-left: 10px;
+    padding-right: 10px;
+    .ivu-checkbox-wrapper {
+      margin-right: 0;
+    }
+  }
+}

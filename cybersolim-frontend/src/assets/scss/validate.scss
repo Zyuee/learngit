@@ -1,0 +1,40 @@
+/* scss for validate*/
+
+@mixin error-input($border-color,$shadow-color) {
+  input {
+    border-color: $border-color;
+    &:focus {
+      box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px $shadow-color;
+    }
+  }
+}
+
+$error-border-color: rgba(243, 51, 47, 0.8);
+$error-shadow-color: rgba(218, 36, 39, 1.0);
+// 确认框验证失败样式
+.confirm.has-error {
+  @include error-input($error-border-color, $error-shadow-color);
+}
+
+// 验证失败样式
+.input.has-error {
+  margin-bottom: 0;
+  @include error-input($error-border-color, $error-shadow-color);
+}
+
+// 验证成功样式
+.input.no-error {
+  @include error-input(#63c266, #67b168);
+}
+
+.help.has-error {
+  color: $error-border-color;
+  font-weight:600;
+}
+
+// 图标样式
+.error-icon, .yes-icon {
+  line-height: 32px;
+  font-size: 0.85rem;
+  margin-left: -16px;
+}

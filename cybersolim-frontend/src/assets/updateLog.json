@@ -1,0 +1,22 @@
+[
+
+  {"note":"this file is not in use! by wyj 2021-4-19"},
+
+
+  {
+    "date":"2021-3-11",
+    "updates":[
+      "New feature: Habitat Suitability Mapping (HSM). Mitigating positional errors from patrol data; Representative location selection from citizen data; Habitat mapping based on probability density functions.",
+      "New Feature: Data Sharing. Share&subscribe dataset/file with users/groups in EGC website.",
+      "New DTA webservices: slope, aspect, planform curvature, profile curvature."
+    ]
+  },
+  {
+    "date":"2021-4-15",
+    "updates":[
+      "Update demonstration videos in the homepage.",
+      "Standardize some modeling terminologies."
+    ]
+  }
+]
+

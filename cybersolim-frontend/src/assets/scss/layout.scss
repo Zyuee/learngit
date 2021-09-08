@@ -1,0 +1,146 @@
+/* https://github.com/twbs/bootstrap/tree/v4-dev/scss*/
+/* 说明：https://segmentfault.com/a/1190000005771076*/
+$enable-grid-classes: true !default;
+$container-max-widths: (sm: 540px, md: 720px, lg: 960px, xl: 1140px) !default;
+$grid-gutter-width-base: 30px !default;
+$grid-gutter-widths: (xs: $grid-gutter-width-base, sm: $grid-gutter-width-base, md: $grid-gutter-width-base, lg: $grid-gutter-width-base, xl: $grid-gutter-width-base) !default;
+$grid-breakpoints: (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px) !default;
+/* @mixin 定义混合器*/
+/* @include 调用混合器*/
+@mixin make-container($gutters: $grid-gutter-widths) {
+  /* position: relative;*/
+  margin-right: auto;
+  margin-left: auto;
+  @each $breakpoint in map-keys($gutters) {
+    @include media-breakpoint-up($breakpoint) {
+      $gutter: map-get($gutters, $breakpoint);
+      padding-right: ($gutter / 2);
+      padding-left: ($gutter / 2);
+    }
+  }
+}
+
+/* For each breakpoint, define the maximum width of the container in a media query*/
+@mixin make-container-max-widths($max-widths: $container-max-widths, $breakpoints: $grid-breakpoints) {
+  @each $breakpoint,
+  $container-max-width in $max-widths {
+    @include media-breakpoint-up($breakpoint, $breakpoints) {
+      width: $container-max-width;
+      max-width: 100%;
+    }
+  }
+}
+
+@mixin make-gutters($gutters: $grid-gutter-widths) {
+  @each $breakpoint in map-keys($gutters) {
+    @include media-breakpoint-up($breakpoint) {
+      $gutter: map-get($gutters, $breakpoint);
+      padding-right: ($gutter / 2);
+      padding-left: ($gutter / 2);
+    }
+  }
+}
+
+/* Media of at least the minimum breakpoint width. No query for the smallest breakpoint.*/
+/* Makes the @content apply to the given breakpoint and wider.*/
+@mixin media-breakpoint-up($name, $breakpoints: $grid-breakpoints) {
+  $min: breakpoint-min($name, $breakpoints);
+  @if $min {
+    @media (min-width: $min) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}
+
+/* Set the container width, and override it for fixed navbars in media queries.*/
+@if $enable-grid-classes {
+  .container-fluid {
+    @include make-container();
+  }
+}
+
+/* Utilizes the mixin meant for fixed width containers, but without any defined*/
+/* width for fluid, full width layouts.*/
+@if $enable-grid-classes {
+  .container {
+    @include make-container();
+    @include make-container-max-widths();
+  }
+}
+
+/* for login & register components*/
+div.change_link {
+  color: rgb(127, 124, 124);
+  height: 20px;
+  width: 100%;
+  padding: 10px 10px 37px 10px;
+  font-size: 16px;
+  text-align: right;
+  border-top: 1px solid rgb(219, 229, 232);
+  border-radius: 0 0 5px 5px;
+  background: -webkit-repeating-linear-gradient(135deg, rgb(247, 247, 247), rgb(247, 247, 247) 15px, rgb(225, 234, 235) 15px, rgb(225, 234, 235) 30px, rgb(247, 247, 247) 30px);
+  background: repeating-linear-gradient(-45deg, rgb(247, 247, 247), rgb(247, 247, 247) 15px, rgb(225, 234, 235) 15px, rgb(225, 234, 235) 30px, rgb(247, 247, 247) 30px);
+  a {
+    display: inline-block;
+    font-weight: bold;
+    background: rgb(247, 248, 241);
+    padding: 2px 6px;
+    color: rgb(29, 162, 193);
+    margin-left: 10px;
+    text-decoration: none;
+    border-radius: 4px;
+    border: 1px solid rgb(203, 213, 214);
+    -webkit-transition: all 0.4s linear;
+    transition: all 0.4s linear;
+    &:hover {
+      color: rgb(57, 191, 215);
+      background: rgb(247, 247, 247);
+      border: 1px solid rgb(74, 179, 198);
+    }
+    &:hover &:active {
+      position: relative;
+      top: 1px;
+    }
+  }
+}
+
+$user-box-color: black;
+/* 登录和注册框的样式*/
+@mixin make-user-box($padding) {
+  z-index: inherit;
+  padding: $padding;
+  background: rgba(247, 247, 247, 0.84); /*rgba(46, 49, 48, 0.5); // rgba(80, 55, 129, 0.66);*/
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.51);
+  border-radius: 8px;
+  /* color: white;*/
+}
+
+$text-center-color: rgba(133, 11, 118, 0.98);
+/* 登录和注册框的标题样式*/
+/* uses: @include make-text-center(2rem,10px);*/
+@mixin make-text-center($fontsize, $margintop) {
+  @media (max-width: 890px) {
+    h1.text-center{
+      font-size: $fontsize - 0.3rem !important;
+    }
+  }
+  h1.text-center {
+    color: $text-center-color;
+    font-weight: bold;
+    text-align: center;
+    font-size: $fontsize;
+    font-family: initial;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, .2);
+    &:after {
+      content: ' ';
+      display: block;
+      width: 100%;
+      height: 2px;
+      margin-top: $margintop;
+      background: -webkit-linear-gradient(left, rgba(147, 184, 189, 0) 0%, rgba(147, 184, 189, 0.8) 20%, rgba(147, 184, 189, 1) 53%, rgba(147, 184, 189, 0.8) 79%, rgba(147, 184, 189, 0) 100%);
+      background: linear-gradient(left, rgba(147, 184, 189, 0) 0%, rgba(147, 184, 189, 0.8) 20%, rgba(147, 184, 189, 1) 53%, rgba(147, 184, 189, 0.8) 79%, rgba(147, 184, 189, 0) 100%);
+    }
+  }
+}

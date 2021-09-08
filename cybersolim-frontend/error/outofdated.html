@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>outofdated</title>
+    <script th:src="@{/assets/lib/outdatedbrowser/outdatedbrowser.min.js}"></script>
+</head>
+<body>
+<!--浏览器检测（只在注册和登录页面检测就行）-->
+<link rel="stylesheet" type="text/css" th:href="@{/assets/lib/outdatedbrowser/outdatedbrowser.min.css}"/>
+<div id="outdated"></div>
+<script th:inline="javascript">
+    var ctx;
+    window.onload=function() {
+        ctx = /*[[@{/}]]*/ '/cybersolim/';
+    };
+
+    //event listener: DOM ready
+    function addLoadEvent(func)
+    {
+        var oldonload = window.onload;
+        if (typeof window.onload != 'function')
+        {
+            window.onload = func;
+        }
+        else
+        {
+            window.onload = function ()
+            {
+                if (oldonload)
+                {
+                    oldonload();
+                }
+                func();
+            }
+        }
+    }
+    //call plugin function after DOM ready
+    addLoadEvent(function ()
+    {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'transform',
+            languagePath: ctx+'/assets/lib/outdatedbrowser/en.html'
+        })
+    });
+</script>
+</body>
+</html>
+

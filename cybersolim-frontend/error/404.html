@@ -1,0 +1,19 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header :: error_head(~{::title})">
+    <title>Page Not Found! Redirecting...</title>
+</head>
+
+<body>
+<div id="container">
+    <img height=312 th:src="@{/assets/img/404.gif}" width=512>
+</div>
+<div id="maincolumn">
+    <div><a href="index" class="style1">
+        <img th:src="@{/assets/img/logo.png}" th:alt-title="logo">
+    </a>
+    </div>
+</div>
+<footer th:replace="fragments/footer::footer"></footer>
+</body>
+</html>

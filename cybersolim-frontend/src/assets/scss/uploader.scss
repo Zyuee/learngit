@@ -1,0 +1,28 @@
+.uploader {
+    padding: 15px;
+    margin: 10px auto 0;
+    font-size: 12px;
+    border: 1px dashed lightgrey;
+    border-radius: 5px;
+}
+
+.uploader .uploader-btn {
+    margin-right: 4px;
+    padding: 5px 15px 6px;
+    line-height: 1.5;
+    font-size: 14px;
+    background-color: #19be6b;
+    border: 1px solid #19be6b;
+    color: #fff;
+    border-radius: 5px;
+    & :hover {
+        transition: color .2s linear, background-color .2s linear, border .2s linear, box-shadow .2s linear;
+    }
+}
+
+.uploader .uploader-list {
+    max-height: 440px;
+    overflow: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+}

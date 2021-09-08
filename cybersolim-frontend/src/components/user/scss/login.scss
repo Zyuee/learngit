@@ -1,0 +1,173 @@
+@import '../../../assets/scss/layout.scss';
+
+@include make-text-center(2.3rem, 15px);
+$height: 500px;
+// 里面不能使用 $height/2
+//vh表示垂向高度单位，100vh表示整个视图的高度
+$contentHeight: calc(50vh - 250px);// 垂直居中
+#des {
+  height: $height;
+  min-width: 300px;
+  background-color: transparent;
+}
+
+// 窗口高度的一半减去内容高度的一半
+.content {
+  margin-top: $contentHeight;
+  align-items: center;
+  justify-content: center;
+}
+
+.reset {
+  text-align: left;
+  width: 180px;
+  float: left;
+  .to_register{
+    font-weight: normal;
+  }
+ }
+
+form {
+  margin-top: 1.7rem;
+  input.ivu-input.ivu-input-group-large {
+    height: 40px !important;
+  }
+  .ivu-form-item {
+    margin-top: 8px
+  }
+}
+
+.ivu-row-flex {
+  margin-left: 0 !important;
+  margin-right: 0 !important
+}
+
+a.hiddenanchor {
+  display: none;
+}
+
+#loginBtn {
+  width: 100%;
+  border-radius: 6px;
+  font-size: 1.5rem; // font-style: italic;
+  color: white;
+  height: 36px;
+}
+
+// 注册-登录框背景
+#login {
+  @include make-user-box(45px 6% 30px 6%);
+}
+
+#remember {
+  font-style: italic;
+  font-size: 12px;
+}
+
+.wrapper {
+  //height: $height;
+  a {
+    color: rgb(95, 155, 198);
+    text-align: right;
+  }
+}
+
+a#forgot {
+  float: right;
+  margin-right: 10px;
+}
+
+.wrapper input:not([type="checkbox"]) {
+  //width: 92%;
+  //box-sizing: content-box;
+  border-radius: 3px;
+  transition: all 0.2s linear;
+}
+
+.form-control-feedback {
+  top: 35px !important;
+}
+
+[data-icon]:after {
+  content: attr(data-icon);
+  font-family: 'FontomasCustomRegular';
+  color: rgb(106, 159, 171);
+  position: absolute;
+  left: 10px;
+  top: 35px;
+  width: 30px;
+}
+
+.wrapper div.button input {
+  width: 30%;
+  cursor: pointer;
+  background: rgb(61, 157, 179);
+  padding: 8px 5px;
+  font-family: 'BebasNeueRegular', 'Arial Narrow', Arial, sans-serif;
+  color: #fff;
+  font-size: 24px;
+  border: 1px solid rgb(28, 108, 122);
+  margin-bottom: 10px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+  border-radius: 3px;
+  box-shadow: 0px 1px 6px 4px rgba(0, 0, 0, 0.07) inset, 0px 0px 0px 3px rgb(254, 254, 254), 0px 5px 3px 3px rgb(210, 210, 210);
+  transition: all 0.2s linear;
+  &:hover {
+    background: rgb(74, 179, 198);
+  }
+  &:active,
+  &:focus {
+    background: rgb(40, 137, 154);
+    position: relative;
+    top: 1px;
+    border: 1px solid rgb(12, 76, 87);
+    box-shadow: 0px 1px 6px 4px rgba(0, 0, 0, 0.2) inset;
+  }
+}
+
+div.login.button,
+div.signin.button {
+  text-align: right;
+  margin: 5px 0;
+}
+
+.keeplogin {
+  margin-top: -5px;
+  label {
+    width: 80%;
+  }
+  input,
+  label {
+    display: inline-block;
+    font-size: 12px;
+    font-style: italic;
+  }
+}
+
+.keeplogin input#loginkeeping {
+  margin-right: 5px;
+}
+
+.remember-me {
+  margin-bottom: 10px;
+  text-align: left;
+  position: relative;
+  label {
+    margin-left: 10px;
+  }
+  a {
+    position: absolute;
+    right: 5px;
+  }
+  button {
+    color: #44A1FF;
+    &:hover {
+      color: #1FA3C1;
+      background-color: rgba(247, 248, 241, 0.59);
+    }
+  }
+}
+
+.login-err{
+  margin:-45px -30px 0 -30px;
+}

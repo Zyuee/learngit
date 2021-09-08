@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header :: error_head(~{::title})">
+    <title>Server Error！Redirecting...</title>
+</head>
+<body>
+<div id="container">
+    <img height="312" th:src="@{/assets/img/error.gif}" width="512">
+    <hr/>
+    <div>
+        <p th:text="${error}?' '">
+            cause of exception
+        </p>
+    </div>
+</div>
+<div id="maincolumn">
+    <div><a href="index" class="style1"><img th:src="@{/assets/img/logo.png}" th:alt-title="logo"></a>
+    </div>
+</div>
+<footer th:replace="fragments/footer::footer"></footer>
+</body>
+</html>

@@ -1,0 +1,61 @@
+// ol3 自定义样式
+@import '../../../assets/scss/widgets';
+
+.ol-control.ol-bar .ol-control.ol-option-bar {
+  margin: 8px 0
+}
+
+.ol-control.ol-bar.ol-group button {
+  margin: 3px 0 0 1px
+}
+
+.ol-control.ol-bar .ol-toggle.ol-active > button {
+  color: white;
+  border: 1px solid white;
+  border-radius: 1px;
+}
+
+.ol-text-button > button {
+  color: black !important
+}
+
+.ol-control.ol-layerswitcher {
+  top:  1rem; //$widget-top
+  right: $widget-right;
+}
+
+.ol-control {
+  button {
+    width: 1.5rem;
+    height: 1.5rem;
+    font-size: 1.3em;
+    color: #100f0f;
+    background-color: rgba(255, 255, 255, 0.75);
+    &:hover {
+      background-color: rgba(255, 221, 0, 0.36);//rgba(17, 228, 121, 0.35);
+      border: 1px solid #080808;
+      border-radius: 2px
+    }
+    &:active,
+    &:visited,
+    &:focus {
+      background-color: rgba(10, 183, 176, 0.7);
+      color: #f0f0e8;
+      border: 1.5px solid white;
+    }
+  }
+  i {
+    color: inherit;
+  }
+}
+
+.toolbar {
+  position: fixed;
+  top: $widget-top - 1rem !important;
+  // z-index: $widget-z-index;
+  right: $widget-right + 1rem;
+  background: rgba(255, 255, 255, .5);
+  // width: 300px;
+  left: auto !important;
+  height: 2rem;
+}

@@ -1,0 +1,41 @@
+@font-face {
+  font-family: "iconfont"; /* Project id 2577490 */
+  src: url('iconfont.woff2?t=1622185877882') format('woff2'),
+       url('iconfont.woff?t=1622185877882') format('woff'),
+       url('iconfont.ttf?t=1622185877882') format('truetype');
+}
+
+/*.iconfont {*/
+/*  font-family: "iconfont" !important;*/
+/*  font-size: 16px;*/
+/*  font-style: normal;*/
+/*  -webkit-font-smoothing: antialiased;*/
+/*  -moz-osx-font-smoothing: grayscale;*/
+/*}*/
+
+
+/*引用图标需要加 iconfont 前缀: "iconfont egc-iconxxxxx"*/
+.iconfont, [class^="egc-icon"], [class*=" egc-icon"] {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.egc-icondatabase:before {
+  content: "\e73c";
+}
+
+.egc-iconsaveas:before {
+  content: "\e74c";
+}
+
+.egc-iconsave:before {
+  content: "\e74d";
+}
+
+.egc-iconmodel:before {
+  content: "\e867";
+}
+

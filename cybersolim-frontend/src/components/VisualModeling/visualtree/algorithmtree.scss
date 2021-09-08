@@ -1,0 +1,99 @@
+@mixin afterAndBefore($top,$width,$height) {
+  content: '';
+  left: -9px;
+  position: absolute;
+  right: auto;
+  top: $top;
+  width: $width;
+  height: $height;
+}
+
+$btn-icon-color: rgba(129, 148, 154, 0.6);
+.algorithm-tree {
+  font-size: 14px;
+  min-height: 20px;
+  top: 0px;
+  //border-radius: 4px;
+  li {
+    margin: 0;
+    //padding: 5px;
+    position: relative;
+    list-style: none;
+    //左侧的线
+    //&:before {
+    //  @include afterAndBefore(-16px, 1px, 100%);
+    //  border-left: 1px solid rgba(153, 153, 153, 0.3);
+    //  bottom: 50px;
+    //}
+    //&:after {
+    //  @include afterAndBefore(17px, 22px, 20px);
+    //  border-top: 1px solid rgba(153, 153, 153, 0.3);
+    //}
+    i.icon-open-state {
+      font-size: 16px;
+    }
+    // 左侧的图标
+    span {
+      display: inline-block;
+      padding: 3px 5px;
+      text-decoration: none;
+      i {
+        margin-right: 5px;
+      }
+      &:hover{
+        color: #0000EE
+      }
+      &:active{
+        color: #2baee9;
+      }
+    }
+    // 右侧的按钮
+    a {
+      padding: 1px 3px 1px 3px;
+      border: 1px solid $btn-icon-color;
+      border-radius: 3px;
+      font-size: 12px;
+      i {
+        color: $btn-icon-color;
+      }
+      &:hover {
+        border-color: #0000EE;
+        i {
+          color: #0000EE
+        }
+      }
+
+    }
+  }
+}
+
+.algorithm-tree li > span,
+.algorithm-tree li > i,
+.algorithm-tree li > a {
+  line-height: 20px;
+  vertical-align: middle;
+}
+
+.algorithm-tree li > a + a {
+  margin-left: 5px;
+}
+
+.algorithm-tree ul ul {
+  padding-left: 10px;
+  li:hover {
+    //background: rgba(0, 0, 0, .015)
+  }
+}
+
+.algorithm-tree > ul > li::after,
+.algorithm-tree > ul > li:before {
+  border: 0
+}
+
+.algorithm-tree li:last-child::before {
+  height: 34px
+}
+
+.algorithm-tree > ul {
+  padding-left: 0
+}

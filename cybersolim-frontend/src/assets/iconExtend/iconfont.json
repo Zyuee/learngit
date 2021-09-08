@@ -1,0 +1,37 @@
+{
+  "id": "2577490",
+  "name": "egc-icon",
+  "font_family": "iconfont",
+  "css_prefix_text": "egc-icon",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "17103340",
+      "name": "database-2-fill",
+      "font_class": "database",
+      "unicode": "e73c",
+      "unicode_decimal": 59196
+    },
+    {
+      "icon_id": "17103409",
+      "name": "save-3-line",
+      "font_class": "save",
+      "unicode": "e74c",
+      "unicode_decimal": 59212
+    },
+    {
+      "icon_id": "17103411",
+      "name": "save-3-fill",
+      "font_class": "saveas",
+      "unicode": "e74d",
+      "unicode_decimal": 59213
+    },
+    {
+      "icon_id": "18991679",
+      "name": "model",
+      "font_class": "model",
+      "unicode": "e867",
+      "unicode_decimal": 59495
+    }
+  ]
+}

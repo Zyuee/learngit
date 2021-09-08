@@ -1,0 +1,24 @@
+.ctx-menu {
+  min-width: 135px;
+  padding: 0 !important;
+  li:after {
+    border-top: none;
+  }
+}
+
+.ctx-item {
+  &:after {
+    border-top: none !important;
+  }
+  &:before {
+    border-left: none !important;
+  }
+  padding: 8px 20px !important;
+  border-bottom: 0.1px dashed #d7dde4;
+  color: #000;
+  &:hover {
+    background-color: #41B883;
+    color: white;
+    cursor: pointer;
+  }
+}
